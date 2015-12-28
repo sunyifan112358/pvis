@@ -124,8 +124,6 @@
 				<!-- Specify classes to ignore in code coverage -->
 				<configuration>
 					<excludes>
-						<exclude>**/ui/**</exclude>
-						<exclude>**/StartSolverUi**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
