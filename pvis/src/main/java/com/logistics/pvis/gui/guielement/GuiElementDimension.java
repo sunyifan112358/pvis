@@ -16,4 +16,6 @@ public interface GuiElementDimension {
 	void setContainerDimension(GuiElementDimension containerDimension);
 	int getAbsoluteX();
 	int getAbsoluteY();
+	int getWidth();
+	int getHeight();
 }
