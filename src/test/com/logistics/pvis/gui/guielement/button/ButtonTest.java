@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.gui.guilayer.GuiLayer;
+import com.logistics.pvis.shape.Shape;
+import com.logistics.pvis.shape.text.Text;
 
 import static org.mockito.Mockito.*;
 
@@ -24,19 +26,16 @@ public class ButtonTest {
 
 	@Test
 	public void testRender() {
-		GuiElementDimension dimension = mock(GuiElementDimension.class);
-		when(dimension.getAbsoluteX()).thenReturn(10);
-		when(dimension.getAbsoluteY()).thenReturn(20);
-		when(dimension.getWidth()).thenReturn(30);
-		when(dimension.getHeight()).thenReturn(40);
+		Shape shape = mock(Shape.class);
+		Text text = mock(Text.class);
 		
-		GuiLayer layer = mock(GuiLayer.class);
-		
-		Button button = new Button(layer, dimension);
+		Button button = new Button(null);
+		button.setShape(shape);
+		button.setText(text);
 		button.render();
 		
-		verify(layer).rectangle(10, 20, 30, 40);
-		
+		verify(shape).render();
+		verify(text).render();
 		
 	}
 

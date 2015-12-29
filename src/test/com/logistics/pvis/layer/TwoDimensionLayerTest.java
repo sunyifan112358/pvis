@@ -19,15 +19,4 @@ public class TwoDimensionLayerTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testRectangle() {
-		PGraphics canvas = mock(PGraphics.class);
-		
-		TwoDimensionLayer layer = new TwoDimensionLayer(null, canvas);
-		layer.rectangle(10, 20, 30, 40);
-		
-		verify(canvas).rect((float)10.0, (float)20.0, 
-				(float)30.0, (float)40.0);
-	}
-
 }
