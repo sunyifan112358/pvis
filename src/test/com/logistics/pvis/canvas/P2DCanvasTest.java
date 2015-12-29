@@ -1,7 +1,5 @@
 package com.logistics.pvis.canvas;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +7,6 @@ import org.junit.Test;
 import processing.core.PGraphics;
 
 import com.logistics.pvis.dimension.Dimension;
-import com.logistics.pvis.layer.TwoDimensionLayer;
-
 import static org.mockito.Mockito.*;
 
 public class P2DCanvasTest {
@@ -32,8 +28,17 @@ public class P2DCanvasTest {
 		
 		verify(raw).rect((float)10.0, (float)20.0, 
 				(float)30.0, (float)40.0);
+	}
+	
+	@Test
+	public void testText() {
+		PGraphics raw = mock(PGraphics.class);
+		TwoDimensionCanvas canvas = new P2DCanvas(raw);
 		
+		canvas.text("abcde", new Dimension(10, 20, 30, 40));
 		
+		verify(raw).text("abcde", (float)10.0, (float)20.0, 
+				(float)30.0, (float)40.0);
 	}
 
 }
