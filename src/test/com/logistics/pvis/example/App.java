@@ -1,12 +1,8 @@
 package com.logistics.pvis.example;
 
-import processing.core.PConstants;
-import processing.core.PGraphics;
-
 import com.logistics.pvis.application.Application;
 import com.logistics.pvis.canvas.P2DCanvas;
 import com.logistics.pvis.canvas.P2DCanvasFactory;
-import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.frame.ProcessingFrame;
@@ -15,8 +11,7 @@ import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.gui.guielement.GuiElementDimensionImpl;
 import com.logistics.pvis.gui.guielement.button.Button;
 import com.logistics.pvis.gui.guilayer.GuiLayer;
-import com.logistics.pvis.layer.Layer;
-import com.logistics.pvis.layer.TwoDimensionLayerImpl;
+import com.logistics.pvis.gui.guilayer.GuiLayerFactory;
 import com.logistics.pvis.scene.BaseScene;
 import com.logistics.pvis.scene.Scene;
 import com.logistics.pvis.shape.rectangle.Rectangle;
@@ -37,16 +32,11 @@ public class App implements Application {
 	@Override
 	public void start() {
 		Scene scene = new BaseScene();
-		P2DCanvasFactory canvasFactory = new P2DCanvasFactory(frame);
-		P2DCanvas canvas = canvasFactory.produceCanvas();
 		
-		GuiElementDimension dimension = new GuiElementDimensionImpl();
-		dimension.setRelativeX(0);
-		dimension.setRelativeY(0);
-		dimension.setWidth(frame.getWidth());
-		dimension.setHeight(frame.getHeight());
+		P2DCanvasFactory canvasFactory = new P2DCanvasFactory();
+		GuiLayerFactory guiLayerFactory = new GuiLayerFactory(canvasFactory);
+		GuiLayer layer = guiLayerFactory.produceGuiLayer(frame);
 		
-		GuiLayer layer = new GuiLayer(canvas, dimension);
 		scene.addLayer(layer);
 		
 		addButton(layer);

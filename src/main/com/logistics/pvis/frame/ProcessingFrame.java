@@ -53,7 +53,6 @@ public class ProcessingFrame implements Frame {
 	 */
 	@Override
 	public int getWidth() {
-		// TODO Auto-generated method stub
 		return width;
 	}
 
