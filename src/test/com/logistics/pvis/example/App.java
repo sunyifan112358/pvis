@@ -10,6 +10,7 @@ import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.gui.guielement.GuiElementDimensionImpl;
 import com.logistics.pvis.gui.guielement.button.Button;
+import com.logistics.pvis.gui.guielement.button.ButtonFactory;
 import com.logistics.pvis.gui.guilayer.GuiLayer;
 import com.logistics.pvis.gui.guilayer.GuiLayerFactory;
 import com.logistics.pvis.scene.BaseScene;
@@ -47,35 +48,9 @@ public class App implements Application {
 	}
 	
 	private void addButton(GuiLayer layer) {
-		GuiElementDimension dimension = new GuiElementDimensionImpl();
-		dimension.setContainerDimension(layer.getContainerDimension());
-		dimension.setAnchorPoint(AnchorPoint.BottomRight);
-		dimension.setRelativeX(10);
-		dimension.setRelativeY(20);
-		dimension.setWidth(50);
-		dimension.setHeight(40);
-		Button button = new Button(dimension);
-		
-		Dimension shapeDimension = new Dimension(
-				dimension.getAbsoluteX(), 
-				dimension.getAbsoluteY(),
-				dimension.getWidth(), 
-				dimension.getHeight());
-		
-		Rectangle buttonShape = new Rectangle(layer.getCanvas());
-		buttonShape.setDimension(shapeDimension);
-		buttonShape.setEdgeColor(Color.BLACK);
-		buttonShape.setFillColor(Color.WHITE);
-		button.setShape(buttonShape);
-		
-		Text text = new Text(layer.getCanvas());
-		text.setText("123");
-		text.setDimension(shapeDimension);
-		text.setFillColor(Color.BLACK);
-		text.setEdgeColor(Color.BLACK);
-		text.setTextAlign(AnchorPoint.MiddleCenter);
-		button.setText(text);
-		
+		ButtonFactory buttonFactory = new ButtonFactory(layer, layer);
+		Button button = buttonFactory.produceButton("123", 
+				AnchorPoint.BottomRight, new Dimension(10, 20, 50, 20));
 		layer.addGuiElement(button);
 		
 	}

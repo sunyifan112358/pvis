@@ -11,14 +11,14 @@ import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
  */
 public class GuiElementDimensionImpl implements GuiElementDimension {
 
-	private AnchorPoint anchorPoint = AnchorPoint.TopLeft;
-	private int relativeX = 0;
-	private int relativeY = 0;
-	private int width = 0;
-	private int height = 0;
-	private int absoluteX = 0;
-	private int absoluteY = 0;
-	private GuiElementDimension containerDimension = null;
+	AnchorPoint anchorPoint = AnchorPoint.TopLeft;
+	int relativeX = 0;
+	int relativeY = 0;
+	int width = 0;
+	int height = 0;
+	int absoluteX = 0;
+	int absoluteY = 0;
+	GuiElementDimension containerDimension = null;
 
 	/* (non-Javadoc)
 	 * @see com.logistics.pvis.gui.guielement.GuiElementDimension#setAnchorPoint(com.logistics.pvis.gui.guielement.AnchorPoint)
@@ -165,6 +165,16 @@ public class GuiElementDimensionImpl implements GuiElementDimension {
 	@Override
 	public int getHeight() {
 		return height;
+	}
+
+	@Override
+	public AnchorPoint getAnchorPoint() {
+		return this.anchorPoint;
+	}
+
+	@Override
+	public GuiElementDimension getContainerDimension() {
+		return this.containerDimension;
 	}
 
 }
