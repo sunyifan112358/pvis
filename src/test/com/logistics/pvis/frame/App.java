@@ -75,7 +75,7 @@ public class App implements Application {
 		button.setShape(buttonShape);
 		
 		Text text = new Text(layer.getCanvas());
-		text.setText("Start");
+		text.setText("123");
 		text.setDimension(shapeDimension);
 		button.setText(text);
 		
