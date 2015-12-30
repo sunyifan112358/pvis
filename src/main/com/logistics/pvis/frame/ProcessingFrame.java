@@ -7,31 +7,45 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import com.logistics.pvis.application.Application;
-import com.logistics.pvis.scene.Scene;
+import processing.core.PGraphics;
 
-import processing.core.PApplet;
+import com.logistics.pvis.application.Application;
+import com.logistics.pvis.canvas.P2DCanvas;
+import com.logistics.pvis.scene.Scene;
 
 /**
  * @author Yifan
  *
  */
-public class ProcessingFrame extends PApplet implements Frame {
-	
-	private static final long serialVersionUID = 6443700965298413664L;
+public class ProcessingFrame implements Frame {
 	
 	private JFrame javaFrame;
-	private Application application;
-	private Scene scene;
-	
+	private DelegatedPApplet delegatedPApplet;
+
 	private int width;
 	private int height;
 	
 	/**
 	 * @param application the application to set
 	 */
-	public void setApplication(Application application) {
-		this.application = application;
+	public ProcessingFrame(JFrame javaFrame, DelegatedPApplet pApplet) {
+		this.javaFrame = javaFrame;
+		this.delegatedPApplet = pApplet;
+	}
+	
+	/**
+	 * @return the delegatedPApplet
+	 */
+	public DelegatedPApplet getDelegatedPApplet() {
+		return delegatedPApplet;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.logistics.pvis.frame.Frame#getHeight()
+	 */
+	@Override
+	public int getHeight() {
+		return height;
 	}
 
 	/* (non-Javadoc)
@@ -45,19 +59,11 @@ public class ProcessingFrame extends PApplet implements Frame {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.logistics.pvis.frame.Frame#setWidth(int)
+	 * @see com.logistics.pvis.frame.Frame#setCurrentScene(com.logistics.pvis.scene.Scene)
 	 */
 	@Override
-	public void setWidth(int width) {
-		this.width = width;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.logistics.pvis.frame.Frame#getHeight()
-	 */
-	@Override
-	public int getHeight() {
-		return height;
+	public void setCurrentScene(Scene scene) {
+		delegatedPApplet.setScene(scene);
 	}
 
 	/*
@@ -69,50 +75,38 @@ public class ProcessingFrame extends PApplet implements Frame {
 		this.height = height;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.logistics.pvis.frame.Frame#setWidth(int)
+	 */
+	@Override
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
 	/* (non-Javadoc)
 	 * @see com.logistics.pvis.frame.Frame#show()
 	 */
 	@Override
 	public void show() {
-		javaFrame = new JFrame();
 		javaFrame.getContentPane().setPreferredSize(
 				new Dimension(width, height));
 		javaFrame.pack();
-		javaFrame.add(this);
-		
-		this.init();
-		
+		javaFrame.add(delegatedPApplet);
+		delegatedPApplet.init();
 		javaFrame.setVisible(true);
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see processing.core.PApplet#setup()
+	/**
+	 * Render a canvas to the screen
+	 * @param canvas The canvas to post
 	 */
-	public void setup() {
-		size(width, height, P2D);
-		frameRate(60);
-		
-		application.start();
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see processing.core.PApplet#draw()
-	 */
-	public void draw() {
-		background(255);
-		this.scene.render();
+	public void postP2DCanvas(P2DCanvas canvas) {
+		delegatedPApplet.image(canvas.getRaw(), 0, 0);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.logistics.pvis.frame.Frame#setCurrentScene(com.logistics.pvis.scene.Scene)
-	 */
 	@Override
-	public void setCurrentScene(Scene scene) {
-		this.scene = scene;
+	public void setApplication(Application application) {
+		delegatedPApplet.setApplication(application);
 	}
-
-
 }

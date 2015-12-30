@@ -3,6 +3,8 @@
  */
 package com.logistics.pvis.frame;
 
+import com.logistics.pvis.application.Application;
+import com.logistics.pvis.canvas.Canvas;
 import com.logistics.pvis.scene.Scene;
 
 /**
@@ -47,6 +49,10 @@ public interface Frame {
 	 * Show the frame
 	 */
 	public void show();
-
 	
+	/**
+	 * Set the application to run
+	 * @param application 
+	 */
+	public void setApplication(Application application);
 }

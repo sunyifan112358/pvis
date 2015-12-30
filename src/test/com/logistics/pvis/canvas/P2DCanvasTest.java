@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 public class P2DCanvasTest {
 	
 	PGraphics raw = null;
-	TwoDimensionCanvas canvas = null;
+	P2DCanvas canvas = null;
 	ProcessingFrame frame = null;
 
 	@Before
@@ -70,8 +70,9 @@ public class P2DCanvasTest {
 	
 	@Test
 	public void testRender(){
+		
 		canvas.render();
-		verify(frame).image(raw, 0, 0);
+		verify(frame).postP2DCanvas(canvas);
 	}
 	
 	@Test

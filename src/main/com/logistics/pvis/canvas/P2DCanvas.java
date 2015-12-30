@@ -2,7 +2,6 @@ package com.logistics.pvis.canvas;
 
 import processing.core.PConstants;
 import processing.core.PGraphics;
-
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.frame.ProcessingFrame;
@@ -10,8 +9,8 @@ import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	
-	private PGraphics raw;
-	private ProcessingFrame frame;
+	PGraphics raw;
+	ProcessingFrame frame;
 	
 	/**
 	 * @param raw
@@ -55,7 +54,7 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 
 	@Override
 	public void render() {
-		frame.image(raw, 0, 0);
+		frame.postP2DCanvas(this);
 	}
 
 	@Override
@@ -98,5 +97,13 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 		}
 		
 		raw.textAlign(horizontalAlign, verticalAlign);
+	}
+
+	/**
+	 * Return the graphics
+	 * @return The processing graphics
+	 */
+	public PGraphics getRaw() {
+		return raw;
 	}
 }

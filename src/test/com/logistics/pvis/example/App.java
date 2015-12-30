@@ -1,13 +1,15 @@
-package com.logistics.pvis.frame;
+package com.logistics.pvis.example;
 
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
 import com.logistics.pvis.application.Application;
 import com.logistics.pvis.canvas.P2DCanvas;
+import com.logistics.pvis.canvas.P2DCanvasFactory;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.frame.ProcessingFrame;
 import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.gui.guielement.GuiElementDimensionImpl;
@@ -35,9 +37,8 @@ public class App implements Application {
 	@Override
 	public void start() {
 		Scene scene = new BaseScene();
-		PGraphics raw = frame.createGraphics(frame.getWidth(), frame.getHeight(), 
-				PConstants.P2D);
-		TwoDimensionCanvas canvas = new P2DCanvas(raw, frame);
+		P2DCanvasFactory canvasFactory = new P2DCanvasFactory(frame);
+		P2DCanvas canvas = canvasFactory.produceCanvas();
 		
 		GuiElementDimension dimension = new GuiElementDimensionImpl();
 		dimension.setRelativeX(0);
