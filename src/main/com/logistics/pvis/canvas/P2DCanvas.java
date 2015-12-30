@@ -2,6 +2,7 @@ package com.logistics.pvis.canvas;
 
 import processing.core.PGraphics;
 
+import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 
 public class P2DCanvas implements Canvas, TwoDimensionCanvas {
@@ -30,5 +31,20 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 		raw.text(text, 
 				(float)boxDimension.x, (float)boxDimension.y, 
 				(float)boxDimension.width, (float)boxDimension.height);
+	}
+
+	@Override
+	public void clear(Color color) {
+		raw.background(color.r, color.g, color.b, color.a);
+	}
+
+	@Override
+	public void begin() {
+		raw.beginDraw();
+	}
+
+	@Override
+	public void end() {
+		raw.endDraw();
 	}
 }

@@ -5,7 +5,7 @@ package com.logistics.pvis.shape.rectangle;
 
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.dimension.Dimension;
-import com.logistics.pvis.layer.TwoDimensionLayer;
+import com.logistics.pvis.layer.TwoDimensionLayerImpl;
 import com.logistics.pvis.shape.Shape;
 
 /**

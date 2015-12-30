@@ -7,6 +7,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import com.logistics.pvis.application.Application;
 import com.logistics.pvis.scene.Scene;
 
 import processing.core.PApplet;
@@ -20,9 +21,17 @@ public class ProcessingFrame extends PApplet implements Frame {
 	private static final long serialVersionUID = 6443700965298413664L;
 	
 	private JFrame javaFrame;
+	private Application application;
 	
 	private int width;
 	private int height;
+	
+	/**
+	 * @param application the application to set
+	 */
+	public void setApplication(Application application) {
+		this.application = application;
+	}
 
 	/* (non-Javadoc)
 	 * @see com.logistics.pvis.frame.Frame#getWidth()
@@ -82,6 +91,16 @@ public class ProcessingFrame extends PApplet implements Frame {
 	public void setup() {
 		size(width, height, P2D);
 		frameRate(60);
+		
+		application.start();
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see processing.core.PApplet#draw()
+	 */
+	public void draw() {
+		background(255);
 	}
 
 	/*

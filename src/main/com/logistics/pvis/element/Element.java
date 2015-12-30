@@ -3,10 +3,11 @@
  */
 package com.logistics.pvis.element;
 
+import com.logistics.pvis.renderable.Renderable;
+
 /**
  * @author Yifan
  *
  */
-public interface Element {
-	public void render();
+public interface Element extends Renderable{
 }
