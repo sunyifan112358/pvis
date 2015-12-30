@@ -3,6 +3,8 @@
  */
 package com.logistics.pvis.gui.guielement;
 
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
+
 /**
  * @author Yifan
  *

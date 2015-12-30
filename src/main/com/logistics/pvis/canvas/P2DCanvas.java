@@ -1,10 +1,12 @@
 package com.logistics.pvis.canvas;
 
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.frame.ProcessingFrame;
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	
@@ -64,5 +66,37 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	@Override
 	public void setFillColor(Color color) {
 		raw.fill(color.r, color.g, color.b, color.a);
+	}
+
+	@Override
+	public void setTextAlign(AnchorPoint textAlign) {
+		int horizontalAlign = 0;
+		int verticalAlign = 0;
+		
+		switch(textAlign.getHorizontal()) {
+		case Left:
+			horizontalAlign = PConstants.LEFT;
+			break;
+		case Center:
+			horizontalAlign = PConstants.CENTER;
+			break;
+		case Right:
+			horizontalAlign = PConstants.RIGHT;
+			break;
+		}
+		
+		switch(textAlign.getVertical()) {
+		case Top:
+			verticalAlign = PConstants.TOP;
+			break;
+		case Middle:
+			verticalAlign = PConstants.CENTER;
+			break;
+		case Bottom:
+			verticalAlign = PConstants.BOTTOM;
+			break;
+		}
+		
+		raw.textAlign(horizontalAlign, verticalAlign);
 	}
 }

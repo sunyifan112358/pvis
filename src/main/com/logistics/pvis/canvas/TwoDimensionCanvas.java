@@ -2,6 +2,7 @@ package com.logistics.pvis.canvas;
 
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 public interface TwoDimensionCanvas extends Canvas {
 
@@ -15,6 +16,8 @@ public interface TwoDimensionCanvas extends Canvas {
 	
 	public void setStrokeColor(Color color);
 	public void setFillColor(Color color);
+	
+	public void setTextAlign(AnchorPoint textAlign);
 	
 	public void render();
 

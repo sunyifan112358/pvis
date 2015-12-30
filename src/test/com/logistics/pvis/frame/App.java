@@ -8,7 +8,7 @@ import com.logistics.pvis.canvas.P2DCanvas;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
-import com.logistics.pvis.gui.guielement.AnchorPoint;
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.gui.guielement.GuiElementDimensionImpl;
 import com.logistics.pvis.gui.guielement.button.Button;
@@ -82,6 +82,7 @@ public class App implements Application {
 		text.setDimension(shapeDimension);
 		text.setFillColor(Color.BLACK);
 		text.setEdgeColor(Color.BLACK);
+		text.setTextAlign(AnchorPoint.MiddleCenter);
 		button.setText(text);
 		
 		layer.addGuiElement(button);

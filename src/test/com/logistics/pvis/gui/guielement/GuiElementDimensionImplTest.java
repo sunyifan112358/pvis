@@ -9,6 +9,8 @@ import static org.mockito.Mockito.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
+
 /**
  * @author Yifan
  *

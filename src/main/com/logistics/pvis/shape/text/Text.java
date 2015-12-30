@@ -3,6 +3,7 @@ package com.logistics.pvis.shape.text;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 import com.logistics.pvis.layer.TwoDimensionLayerImpl;
 import com.logistics.pvis.shape.Shape;
 
@@ -13,6 +14,7 @@ public class Text implements Shape {
 	private Dimension dimension;
 	private Color edgeColor;
 	private Color fillColor;
+	private AnchorPoint textAlign;
 
 	/**
 	 * @param canvas
@@ -40,6 +42,7 @@ public class Text implements Shape {
 	public void render() {
 		canvas.setFillColor(fillColor);
 		canvas.setStrokeColor(edgeColor);
+		canvas.setTextAlign(textAlign);
 		canvas.text(text, dimension);
 	}
 
@@ -61,6 +64,10 @@ public class Text implements Shape {
 	@Override
 	public void setFillColor(Color fillColor) {
 		this.fillColor = fillColor;
+	}
+	
+	public void setTextAlign(AnchorPoint textAlign) {
+		this.textAlign = textAlign;
 	}
 
 }

@@ -4,11 +4,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.frame.ProcessingFrame;
+import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 import static org.mockito.Mockito.*;
 
@@ -82,6 +84,60 @@ public class P2DCanvasTest {
 	public void testSetFillColor() {
 		canvas.setFillColor(new Color(1, 2, 3, 4));
 		verify(raw).fill(1, 2, 3, 4);
+	}
+	
+	@Test
+	public void testSetTextAlignLeftTop() {
+		canvas.setTextAlign(AnchorPoint.TopLeft);
+		verify(raw).textAlign(PConstants.LEFT, PConstants.TOP);
+	}
+	
+	@Test
+	public void testSetTextAlignCenterTop() {
+		canvas.setTextAlign(AnchorPoint.TopCenter);
+		verify(raw).textAlign(PConstants.CENTER, PConstants.TOP);
+	}
+	
+	@Test
+	public void testSetTextAlignRightTop() {
+		canvas.setTextAlign(AnchorPoint.TopRight);
+		verify(raw).textAlign(PConstants.RIGHT, PConstants.TOP);
+	}
+	
+	@Test
+	public void testSetTextAlignLeftCenter() {
+		canvas.setTextAlign(AnchorPoint.MiddleLeft);
+		verify(raw).textAlign(PConstants.LEFT, PConstants.CENTER);
+	}
+	
+	@Test
+	public void testSetTextAlignCenterCenter() {
+		canvas.setTextAlign(AnchorPoint.MiddleCenter);
+		verify(raw).textAlign(PConstants.CENTER, PConstants.CENTER);
+	}
+	
+	@Test
+	public void testSetTextAlignRightCenter() {
+		canvas.setTextAlign(AnchorPoint.MiddleRight);
+		verify(raw).textAlign(PConstants.RIGHT, PConstants.CENTER);
+	}
+	
+	@Test
+	public void testSetTextAlignLeftBottom() {
+		canvas.setTextAlign(AnchorPoint.BottomLeft);
+		verify(raw).textAlign(PConstants.LEFT, PConstants.BOTTOM);
+	}
+	
+	@Test
+	public void testSetTextAlignCenterBottom() {
+		canvas.setTextAlign(AnchorPoint.BottomCenter);
+		verify(raw).textAlign(PConstants.CENTER, PConstants.BOTTOM);
+	}
+	
+	@Test
+	public void testSetTextAlignRightBottom() {
+		canvas.setTextAlign(AnchorPoint.BottomRight);
+		verify(raw).textAlign(PConstants.RIGHT, PConstants.BOTTOM);
 	}
 	
 
