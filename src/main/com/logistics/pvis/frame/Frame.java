@@ -46,6 +46,7 @@ public interface Frame {
 	/**
 	 * Show the frame
 	 */
-	void show();
+	public void show();
+
 	
 }

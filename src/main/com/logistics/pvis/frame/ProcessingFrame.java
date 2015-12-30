@@ -22,6 +22,7 @@ public class ProcessingFrame extends PApplet implements Frame {
 	
 	private JFrame javaFrame;
 	private Application application;
+	private Scene scene;
 	
 	private int width;
 	private int height;
@@ -101,6 +102,7 @@ public class ProcessingFrame extends PApplet implements Frame {
 	 */
 	public void draw() {
 		background(255);
+		this.scene.render();
 	}
 
 	/*
@@ -109,8 +111,7 @@ public class ProcessingFrame extends PApplet implements Frame {
 	 */
 	@Override
 	public void setCurrentScene(Scene scene) {
-		// TODO Auto-generated method stub
-		
+		this.scene = scene;
 	}
 
 

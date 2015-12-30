@@ -3,6 +3,7 @@
  */
 package com.logistics.pvis.layer;
 
+import com.logistics.pvis.canvas.Canvas;
 import com.logistics.pvis.renderable.Renderable;
 
 /**
@@ -10,4 +11,7 @@ import com.logistics.pvis.renderable.Renderable;
  *
  */
 public interface Layer extends Renderable {
+	
+	public Canvas getCanvas();
+	
 }

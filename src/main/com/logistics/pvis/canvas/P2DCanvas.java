@@ -4,17 +4,20 @@ import processing.core.PGraphics;
 
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.frame.ProcessingFrame;
 
 public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	
 	private PGraphics raw;
+	private ProcessingFrame frame;
 	
 	/**
 	 * @param raw
 	 */
-	public P2DCanvas(PGraphics raw) {
+	public P2DCanvas(PGraphics raw, ProcessingFrame frame) {
 		super();
 		this.raw = raw;
+		this.frame = frame;
 	}
 
 	/* (non-Javadoc)
@@ -46,5 +49,10 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	@Override
 	public void end() {
 		raw.endDraw();
+	}
+
+	@Override
+	public void render() {
+		frame.image(raw, 0, 0);
 	}
 }

@@ -23,4 +23,7 @@ public class Color {
 		this.b = grayScale;
 		this.a = 255;
 	}
+	
+	public static final Color WHITE = new Color(255);
+	public static final Color BLACK = new Color(0); 
 }

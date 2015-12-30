@@ -55,5 +55,14 @@ public class GuiElementDimensionImplTest {
 		assertEquals(1060, dimension.getAbsoluteX());
 		assertEquals(940, dimension.getAbsoluteY());
 	}
+	
+	@Test
+	public void testGetAbsoluteDimensionRootContainer() {
+		dimension.setContainerDimension(null);
+		dimension.setAnchorPoint(AnchorPoint.BottomRight);
+		assertEquals(10, dimension.getAbsoluteX());
+		assertEquals(20, dimension.getAbsoluteY());
+	}
+
 
 }

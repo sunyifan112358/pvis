@@ -89,6 +89,13 @@ public class GuiElementDimensionImpl implements GuiElementDimension {
 	}
 	
 	private void updateAbsolutePosition() {	
+		
+		if (this.containerDimension == null) {
+			this.absoluteX = this.relativeX;
+			this.absoluteY = this.relativeY;
+			return;
+		}
+		
 		// Set absolute position on X axis
 		switch (this.anchorPoint) {
 		case TopLeft: 

@@ -3,7 +3,7 @@ package com.logistics.pvis.canvas;
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 
-public interface TwoDimensionCanvas {
+public interface TwoDimensionCanvas extends Canvas {
 
 	public void rectangle(Dimension dimension);
 	public void text(String text, Dimension boxDimension);
@@ -12,5 +12,7 @@ public interface TwoDimensionCanvas {
 	
 	public void begin();
 	public void end();
+	
+	public void render();
 
 }

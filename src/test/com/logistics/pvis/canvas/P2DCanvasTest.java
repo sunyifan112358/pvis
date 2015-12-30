@@ -8,6 +8,7 @@ import processing.core.PGraphics;
 
 import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.frame.ProcessingFrame;
 
 import static org.mockito.Mockito.*;
 
@@ -15,11 +16,13 @@ public class P2DCanvasTest {
 	
 	PGraphics raw = null;
 	TwoDimensionCanvas canvas = null;
+	ProcessingFrame frame = null;
 
 	@Before
 	public void setUp() throws Exception {
 		raw = mock(PGraphics.class);
-		canvas = new P2DCanvas(raw);
+		frame = mock(ProcessingFrame.class);
+		canvas = new P2DCanvas(raw, frame);
 	}
 
 	@After
@@ -61,6 +64,12 @@ public class P2DCanvasTest {
 		canvas.clear(new Color(1, 2, 3, 4));
 		
 		verify(raw).background(1, 2, 3, 4);
+	}
+	
+	@Test
+	public void testRender(){
+		canvas.render();
+		verify(frame).image(raw, 0, 0);
 	}
 	
 	

@@ -3,7 +3,9 @@
  */
 package com.logistics.pvis.layer;
 
+import com.logistics.pvis.canvas.Canvas;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
+import com.logistics.pvis.color.Color;
 import com.logistics.pvis.frame.Frame;
 
 /**
@@ -33,10 +35,15 @@ public class TwoDimensionLayerImpl implements TwoDimensionLayer {
 	 */
 	@Override
 	public void render() {
-		canvas.beginDraw();
-		canvas.background(255);
+		canvas.begin();
+		canvas.clear(Color.WHITE);
 		
-		canvas.endDraw();
+		canvas.end();
+	}
+
+	@Override
+	public TwoDimensionCanvas getCanvas() {
+		return canvas;
 	}
 	
 }

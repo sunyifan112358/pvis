@@ -6,10 +6,18 @@ import processing.core.PGraphics;
 import com.logistics.pvis.application.Application;
 import com.logistics.pvis.canvas.P2DCanvas;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
+import com.logistics.pvis.dimension.Dimension;
+import com.logistics.pvis.gui.guielement.AnchorPoint;
+import com.logistics.pvis.gui.guielement.GuiElementDimension;
+import com.logistics.pvis.gui.guielement.GuiElementDimensionImpl;
+import com.logistics.pvis.gui.guielement.button.Button;
+import com.logistics.pvis.gui.guilayer.GuiLayer;
 import com.logistics.pvis.layer.Layer;
 import com.logistics.pvis.layer.TwoDimensionLayerImpl;
 import com.logistics.pvis.scene.BaseScene;
 import com.logistics.pvis.scene.Scene;
+import com.logistics.pvis.shape.rectangle.Rectangle;
+import com.logistics.pvis.shape.text.Text;
 
 public class App implements Application {
 
@@ -28,10 +36,50 @@ public class App implements Application {
 		Scene scene = new BaseScene();
 		PGraphics raw = frame.createGraphics(frame.getWidth(), frame.getHeight(), 
 				PConstants.P2D);
-		TwoDimensionCanvas canvas = new P2DCanvas(raw);
-		Layer layer = new TwoDimensionLayerImpl(frame, canvas);
+		TwoDimensionCanvas canvas = new P2DCanvas(raw, frame);
+		
+		GuiElementDimension dimension = new GuiElementDimensionImpl();
+		dimension.setRelativeX(0);
+		dimension.setRelativeY(0);
+		dimension.setWidth(frame.getWidth());
+		dimension.setHeight(frame.getHeight());
+		
+		GuiLayer layer = new GuiLayer(frame, canvas, dimension);
 		scene.addLayer(layer);
 		
+		addButton(layer);
+		
 		frame.setCurrentScene(scene);
+		
+		
+	}
+	
+	private void addButton(GuiLayer layer) {
+		GuiElementDimension dimension = new GuiElementDimensionImpl();
+		dimension.setContainerDimension(layer.getContainerDimension());
+		dimension.setAnchorPoint(AnchorPoint.BottomRight);
+		dimension.setRelativeX(10);
+		dimension.setRelativeY(20);
+		dimension.setWidth(50);
+		dimension.setHeight(40);
+		Button button = new Button(dimension);
+		
+		Dimension shapeDimension = new Dimension(
+				dimension.getAbsoluteX(), 
+				dimension.getAbsoluteY(),
+				dimension.getWidth(), 
+				dimension.getHeight());
+		
+		Rectangle buttonShape = new Rectangle(layer.getCanvas());
+		buttonShape.setDimension(shapeDimension);
+		button.setShape(buttonShape);
+		
+		Text text = new Text(layer.getCanvas());
+		text.setText("Start");
+		text.setDimension(shapeDimension);
+		button.setText(text);
+		
+		layer.addGuiElement(button);
+		
 	}
 }
