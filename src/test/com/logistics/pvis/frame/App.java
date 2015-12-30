@@ -45,7 +45,7 @@ public class App implements Application {
 		dimension.setWidth(frame.getWidth());
 		dimension.setHeight(frame.getHeight());
 		
-		GuiLayer layer = new GuiLayer(frame, canvas, dimension);
+		GuiLayer layer = new GuiLayer(canvas, dimension);
 		scene.addLayer(layer);
 		
 		addButton(layer);

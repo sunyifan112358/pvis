@@ -15,13 +15,11 @@ import com.logistics.pvis.layer.TwoDimensionLayer;
 public class GuiLayer implements GuiContainer, TwoDimensionLayer {
 	
 	List<GuiElement> elements = new ArrayList<GuiElement>();
-	ProcessingFrame frame;
 	TwoDimensionCanvas canvas;
 	GuiElementDimension dimension;
 	
-	public GuiLayer(ProcessingFrame frame, TwoDimensionCanvas canvas, 
+	public GuiLayer(TwoDimensionCanvas canvas, 
 			GuiElementDimension dimension) {
-		this.frame = frame;
 		this.canvas = canvas;
 		this.dimension = dimension;
 	}
