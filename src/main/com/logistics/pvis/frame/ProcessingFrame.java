@@ -19,11 +19,11 @@ import com.logistics.pvis.scene.Scene;
  */
 public class ProcessingFrame implements Frame {
 	
-	private JFrame javaFrame;
-	private DelegatedPApplet delegatedPApplet;
+	JFrame javaFrame;
+	DelegatedPApplet delegatedPApplet;
 
-	private int width;
-	private int height;
+	int width;
+	int height;
 	
 	/**
 	 * @param application the application to set
