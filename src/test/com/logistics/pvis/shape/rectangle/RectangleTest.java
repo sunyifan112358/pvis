@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
+import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 
 public class RectangleTest {
@@ -26,8 +27,13 @@ public class RectangleTest {
 		
 		Rectangle rectangle = new Rectangle(canvas);
 		rectangle.setDimension(dimension);
+		Color color = new Color(1, 2, 3, 4);
+		rectangle.setEdgeColor(color);
+		rectangle.setFillColor(color);
 		rectangle.render();
 		
+		verify(canvas).setFillColor(color);
+		verify(canvas).setStrokeColor(color);
 		verify(canvas).rectangle(dimension);
 	}
 

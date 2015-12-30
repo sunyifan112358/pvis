@@ -13,6 +13,9 @@ public interface TwoDimensionCanvas extends Canvas {
 	public void begin();
 	public void end();
 	
+	public void setStrokeColor(Color color);
+	public void setFillColor(Color color);
+	
 	public void render();
 
 }

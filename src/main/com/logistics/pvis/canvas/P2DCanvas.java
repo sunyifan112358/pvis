@@ -55,4 +55,14 @@ public class P2DCanvas implements Canvas, TwoDimensionCanvas {
 	public void render() {
 		frame.image(raw, 0, 0);
 	}
+
+	@Override
+	public void setStrokeColor(Color color) {
+		raw.stroke(color.r, color.g, color.b, color.a);
+	}
+
+	@Override
+	public void setFillColor(Color color) {
+		raw.fill(color.r, color.g, color.b, color.a);
+	}
 }

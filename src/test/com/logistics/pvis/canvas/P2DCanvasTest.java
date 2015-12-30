@@ -72,6 +72,17 @@ public class P2DCanvasTest {
 		verify(frame).image(raw, 0, 0);
 	}
 	
+	@Test
+	public void testSetStrokeColor() {
+		canvas.setStrokeColor(new Color(1, 2, 3, 4));
+		verify(raw).stroke(1, 2, 3, 4);
+	}
+	
+	@Test
+	public void testSetFillColor() {
+		canvas.setFillColor(new Color(1, 2, 3, 4));
+		verify(raw).fill(1, 2, 3, 4);
+	}
 	
 
 }

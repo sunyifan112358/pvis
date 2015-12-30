@@ -6,6 +6,7 @@ import processing.core.PGraphics;
 import com.logistics.pvis.application.Application;
 import com.logistics.pvis.canvas.P2DCanvas;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
+import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.gui.guielement.AnchorPoint;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
@@ -72,11 +73,15 @@ public class App implements Application {
 		
 		Rectangle buttonShape = new Rectangle(layer.getCanvas());
 		buttonShape.setDimension(shapeDimension);
+		buttonShape.setEdgeColor(Color.BLACK);
+		buttonShape.setFillColor(Color.WHITE);
 		button.setShape(buttonShape);
 		
 		Text text = new Text(layer.getCanvas());
 		text.setText("123");
 		text.setDimension(shapeDimension);
+		text.setFillColor(Color.BLACK);
+		text.setEdgeColor(Color.BLACK);
 		button.setText(text);
 		
 		layer.addGuiElement(button);
