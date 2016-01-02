@@ -5,6 +5,8 @@ package com.logistics.pvis.layer;
 
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
 import com.logistics.pvis.color.Color;
+import com.logistics.pvis.event.mouseevent.MouseEvent;
+import com.logistics.pvis.event.mouseevent.MouseEventHandler;
 import com.logistics.pvis.frame.Frame;
 
 /**
@@ -47,6 +49,18 @@ public class TwoDimensionLayerImpl implements TwoDimensionLayer {
 	@Override
 	public TwoDimensionCanvas getCanvas() {
 		return canvas;
+	}
+
+	@Override
+	public void processMouseEvent(MouseEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addMouseEventHandler(MouseEventHandler eventHandler) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

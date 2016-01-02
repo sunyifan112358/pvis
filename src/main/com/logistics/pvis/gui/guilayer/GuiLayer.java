@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.logistics.pvis.canvas.Canvas;
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
+import com.logistics.pvis.event.mouseevent.MouseEvent;
+import com.logistics.pvis.event.mouseevent.MouseEventHandler;
 import com.logistics.pvis.frame.Frame;
 import com.logistics.pvis.frame.ProcessingFrame;
 import com.logistics.pvis.gui.guicontainer.GuiContainer;
@@ -56,4 +58,16 @@ public class GuiLayer implements GuiContainer, TwoDimensionLayer {
 		return canvas;
 	}
 
+	@Override
+	public void processMouseEvent(MouseEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addMouseEventHandler(MouseEventHandler eventHandler) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

@@ -16,6 +16,7 @@ public class GuiLayerFactory {
 
 	public GuiLayer produceGuiLayer(ProcessingFrame frame) {
 		P2DCanvas canvas = canvasFactory.produceCanvas(frame);
+		
 		GuiElementDimension dimension = new GuiElementDimensionImpl(); 
 		dimension.setRelativeX(0);
 		dimension.setRelativeY(0);
