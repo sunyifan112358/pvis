@@ -33,8 +33,8 @@ public class MouseEventTest {
 		MouseEvent event = new MouseEvent(nativeEvent);
 		assertEquals(MouseEventAction.CLICK, event.getMouseEventAction());
 		assertEquals(MouseButton.LEFT, event.getMouseButton());
-		assertEquals(0, event.getMousePosition().getX(), 1e-5);
-		assertEquals(0, event.getMousePosition().getY(), 1e-5);
+		assertEquals(0.0, event.getMousePosition().getX(), 1e-5);
+		assertEquals(0.0, event.getMousePosition().getY(), 1e-5);
 		assertEquals(1, event.getCount());
 	}
 
