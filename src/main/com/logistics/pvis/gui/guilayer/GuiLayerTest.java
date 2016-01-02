@@ -11,7 +11,6 @@ import org.junit.Test;
 
 import com.logistics.pvis.canvas.P2DCanvas;
 import com.logistics.pvis.event.mouseevent.GeneralMouseEventReceiverTest;
-import com.logistics.pvis.frame.Frame;
 import com.logistics.pvis.gui.guielement.GuiElement;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 
