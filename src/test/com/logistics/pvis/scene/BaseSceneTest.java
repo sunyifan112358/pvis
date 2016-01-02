@@ -1,13 +1,11 @@
 package com.logistics.pvis.scene;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.logistics.pvis.event.mouseevent.BasicMouseEventReceiverTest;
 import com.logistics.pvis.event.mouseevent.GeneralMouseEventReceiverTest;
 import com.logistics.pvis.layer.Layer;
 

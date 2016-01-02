@@ -96,7 +96,7 @@ public class GuiLayer implements GuiContainer, TwoDimensionLayer {
 	 * @see com.logistics.pvis.gui.guicontainer.GuiContainer#getGuiElement()
 	 */
 	@Override
-	public Set<GuiElement> getGuiElement() {
+	public Set<GuiElement> getGuiElements() {
 		return this.elements;
 	}
 	

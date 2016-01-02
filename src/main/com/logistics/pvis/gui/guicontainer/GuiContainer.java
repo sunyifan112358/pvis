@@ -15,5 +15,5 @@ import com.logistics.pvis.gui.guielement.GuiElementDimension;
 public interface GuiContainer {
 	public GuiElementDimension getContainerDimension();
 	public void addGuiElement(GuiElement element);
-	public Set<GuiElement> getGuiElement();
+	public Set<GuiElement> getGuiElements();
 }
