@@ -3,8 +3,9 @@
  */
 package com.logistics.pvis.scene;
 
-import com.logistics.pvis.event.keyevent.KeyEvent;
-import com.logistics.pvis.event.mouseevent.MouseEvent;
+import java.util.Iterator;
+import java.util.List;
+
 import com.logistics.pvis.event.mouseevent.MouseEventReceiver;
 import com.logistics.pvis.layer.Layer;
 import com.logistics.pvis.renderable.Renderable;
@@ -14,5 +15,6 @@ import com.logistics.pvis.renderable.Renderable;
  *
  */
 public interface Scene extends Renderable, MouseEventReceiver {
-	void addLayer(Layer layer);
+	public void addLayer(Layer layer);
+	public List<Layer> getLayers();
 }

@@ -48,4 +48,9 @@ public class BaseScene implements Scene {
 		}
 	}
 
+	@Override
+	public List<Layer> getLayers() {
+		return layers;
+	}
+
 }
