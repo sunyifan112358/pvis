@@ -4,7 +4,7 @@
 
   <groupId>com.logistics.pvis</groupId>
   <artifactId>pvis</artifactId>
-  <version>0.1</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>pvis</name>
