@@ -42,5 +42,19 @@ public class ColorTest {
 		assertEquals(5, color.b);
 		assertEquals(255, color.a);
 	}
+	
+	@Test
+	public void testEquals() {
+		Color color1 = new Color(1, 2, 3, 4);
+		Color color2 = new Color(1, 2, 3, 4);
+		assertTrue(color1.equals(color2));
+	}
+	
+	@Test
+	public void testNotEquals() {
+		Color color1 = new Color(1, 2, 3, 4);
+		Color color2 = new Color(1, 2, 3, 5);
+		assertFalse(color1.equals(color2));
+	}
 
 }

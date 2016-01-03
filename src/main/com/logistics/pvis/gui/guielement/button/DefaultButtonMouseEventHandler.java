@@ -22,7 +22,7 @@ public class DefaultButtonMouseEventHandler implements MouseEventHandler {
 		double mouseX = mouseEvent.getPosition().getX();
 		double mouseY = mouseEvent.getPosition().getY();
 		Dimension dimension = 
-				button.getGuiElementDimension().getAbsoluteDimension();
+				button.getAbsoluteDimension();
 		if (mouseX > dimension.x && 
 				mouseX < dimension.x + dimension.width &&
 				mouseY > dimension.y && 
@@ -36,17 +36,17 @@ public class DefaultButtonMouseEventHandler implements MouseEventHandler {
 	public void process(MouseEvent mouseEvent) {
 		if (mouseEvent.getAction() == MouseEventAction.MOVE) {
 			if (isMouseIn(mouseEvent)) {
-				button.getShape().setFillColor(new Color(240));
+				button.setFillColor(new Color(250));
 			} else {
-				button.getShape().setFillColor(new Color(255));
+				button.setFillColor(new Color(255));
 			}
 		}
 		
 		if (isMouseIn(mouseEvent)) {
 			if(mouseEvent.getAction() == MouseEventAction.PRESS) {
-				button.getShape().setFillColor(new Color(200));
+				button.setFillColor(new Color(200));
 			} else if (mouseEvent.getAction() == MouseEventAction.RELEASE) {
-				button.getShape().setFillColor(new Color(255));
+				button.setFillColor(new Color(255));
 			}
 		}
 	}

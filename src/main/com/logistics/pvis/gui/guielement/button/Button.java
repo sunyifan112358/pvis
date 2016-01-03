@@ -1,5 +1,7 @@
 package com.logistics.pvis.gui.guielement.button;
 
+import com.logistics.pvis.color.Color;
+import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.element.BaseElement;
 import com.logistics.pvis.event.mouseevent.MouseEvent;
 import com.logistics.pvis.event.mouseevent.MouseEventHandler;
@@ -67,6 +69,14 @@ public class Button extends BaseElement implements GuiElement {
 	@Override
 	public GuiElementDimension getGuiElementDimension() {
 		return this.dimension;
+	}
+	
+	public void setFillColor(Color color) {
+		this.getShape().setFillColor(color);
+	}
+	
+	public Dimension getAbsoluteDimension() {
+		return dimension.getAbsoluteDimension();
 	}
 
 }

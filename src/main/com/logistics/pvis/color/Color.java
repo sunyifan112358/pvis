@@ -25,5 +25,12 @@ public class Color {
 	}
 	
 	public static final Color WHITE = new Color(255);
-	public static final Color BLACK = new Color(0); 
+	public static final Color BLACK = new Color(0);
+	
+	public boolean equals(Color color) {
+		if (r == color.r && g == color.g && b == color.b && a == color.a) {
+			return true;
+		}
+		return false;
+	}
 }
