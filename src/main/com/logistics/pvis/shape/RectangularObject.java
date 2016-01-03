@@ -1,4 +1,4 @@
-package com.logistics.pvis;
+package com.logistics.pvis.shape;
 
 import com.logistics.pvis.dimension.Dimension;
 
