@@ -78,7 +78,7 @@ public class MouseEvent implements Event {
 		return position;
 	}
 	
-	public MouseEventAction getMouseEventAction() {
+	public MouseEventAction getAction() {
 		return action;
 	}
 

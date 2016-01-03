@@ -44,6 +44,8 @@ public class App implements Application {
 		ButtonFactory buttonFactory = new ButtonFactory(layer, layer);
 		Button button = buttonFactory.produceButton("123", 
 				AnchorPoint.BottomRight, new Dimension(10, 20, 50, 20));
+		ButtonMouseEventHandler mouseHandler = new ButtonMouseEventHandler();
+		button.addMouseEventHandler(mouseHandler);
 		layer.addGuiElement(button);
 	}
 }
