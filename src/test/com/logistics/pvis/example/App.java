@@ -28,8 +28,7 @@ public class App implements Application {
 	public void start() {
 		Scene scene = new BaseScene();
 		
-		P2DCanvasFactory canvasFactory = new P2DCanvasFactory();
-		GuiLayerFactory guiLayerFactory = new GuiLayerFactory(canvasFactory);
+		GuiLayerFactory guiLayerFactory = new GuiLayerFactory();
 		GuiLayer layer = guiLayerFactory.produceGuiLayer(frame);
 		
 		scene.addLayer(layer);

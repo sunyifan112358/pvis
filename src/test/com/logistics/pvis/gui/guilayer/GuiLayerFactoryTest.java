@@ -24,22 +24,23 @@ public class GuiLayerFactoryTest {
 
 	@Test
 	public void testProduceGuiLayer() {
-		P2DCanvasFactory canvasFactory = mock(P2DCanvasFactory.class);
 		ProcessingFrame frame = mock(ProcessingFrame.class);
-		GuiLayerFactory guiLayerFactory = new GuiLayerFactory(canvasFactory);
 		P2DCanvas canvas = mock(P2DCanvas.class);
+		GuiLayerFactory guiLayerFactory = new GuiLayerFactory();
 		
-		when(canvasFactory.produceCanvas(frame)).thenReturn(canvas);
 		when(frame.getWidth()).thenReturn(100);
 		when(frame.getHeight()).thenReturn(200);
+		when(frame.createP2DCanvas()).thenReturn(canvas);
 		
 		GuiLayer layer = guiLayerFactory.produceGuiLayer(frame);
 		
-		assertEquals(canvas, layer.canvas);
+		assertEquals(canvas, layer.getCanvas());
 		assertEquals(0, layer.dimension.getAbsoluteX());
 		assertEquals(0, layer.dimension.getAbsoluteY());
 		assertEquals(100, layer.dimension.getWidth());
 		assertEquals(200, layer.dimension.getHeight());
+		assertTrue(layer.mouseEventHandlers.get(0) instanceof 
+				GuiLayerMouseEventPropagator);
 	}
 
 }

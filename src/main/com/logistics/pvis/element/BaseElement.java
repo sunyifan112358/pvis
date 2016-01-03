@@ -9,7 +9,7 @@ import com.logistics.pvis.event.mouseevent.MouseEventHandler;
 
 public abstract class BaseElement implements Element {
 	
-	List<MouseEventHandler> mouseEventHandlers;
+	public List<MouseEventHandler> mouseEventHandlers;
 	
 	public BaseElement() {
 		mouseEventHandlers = new ArrayList<MouseEventHandler>();

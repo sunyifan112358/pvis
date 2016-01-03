@@ -7,6 +7,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 import com.logistics.pvis.application.Application;
@@ -107,5 +108,16 @@ public class ProcessingFrame implements Frame {
 	@Override
 	public void setApplication(Application application) {
 		delegatedPApplet.setApplication(application);
+	}
+	
+	/**
+	 * Create a P2D Canvas with the same size as the frame
+	 * @return
+	 */
+	public P2DCanvas createP2DCanvas() {
+		PGraphics pGraphics = delegatedPApplet.createGraphics(
+				this.width, this.height, PConstants.P2D);
+		P2DCanvas canvas = new P2DCanvas(pGraphics, this);
+		return canvas;
 	}
 }

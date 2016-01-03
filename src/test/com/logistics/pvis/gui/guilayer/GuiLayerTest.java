@@ -20,7 +20,6 @@ public class GuiLayerTest {
 	GuiElement element2;
 	P2DCanvas canvas;
 	GuiElementDimension dimension;
-	
 
 	@Before
 	public void setUp() throws Exception {
