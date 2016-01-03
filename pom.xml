@@ -22,10 +22,8 @@
     </dependency>
     <dependency>
     	<groupId>processing</groupId>
-    	<artifactId>processing.core</artifactId>
+    	<artifactId>processing</artifactId>
     	<version>2.2.1</version>
-    	<scope>system</scope>
-    	<systemPath>${project.basedir}/library/core.jar</systemPath>
     </dependency>
     <dependency>
     	<groupId>junit</groupId>
