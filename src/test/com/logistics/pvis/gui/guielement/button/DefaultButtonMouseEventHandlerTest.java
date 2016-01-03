@@ -11,7 +11,6 @@ import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.event.mouseevent.MouseEvent;
 import com.logistics.pvis.event.mouseevent.MouseEventAction;
-import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.point.Point2D;
 
 public class DefaultButtonMouseEventHandlerTest {
