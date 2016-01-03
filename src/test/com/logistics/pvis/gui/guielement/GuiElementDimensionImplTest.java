@@ -9,6 +9,7 @@ import static org.mockito.Mockito.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 /**
@@ -64,6 +65,15 @@ public class GuiElementDimensionImplTest {
 		dimension.setAnchorPoint(AnchorPoint.BottomRight);
 		assertEquals(10, dimension.getAbsoluteX());
 		assertEquals(20, dimension.getAbsoluteY());
+	}
+	
+	@Test
+	public void testgetAbsoluteDimension() {
+		Dimension d = dimension.getAbsoluteDimension();
+		assertEquals(110, d.x, 1e-5);
+		assertEquals(220, d.y, 1e-5);
+		assertEquals(30, d.width, 1e-5);
+		assertEquals(40, d.height, 1e-5);
 	}
 
 
