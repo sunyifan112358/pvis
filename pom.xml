@@ -112,7 +112,7 @@
 						</goals>
 						<phase>validate</phase>
 					</execution>
-			</executions>
+				</executions>
 			</plugin>
 			<plugin>
 				<!-- CODE COVERAGE -->
