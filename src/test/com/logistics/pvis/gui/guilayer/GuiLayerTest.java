@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.logistics.pvis.canvas.P2DCanvas;
-import com.logistics.pvis.event.mouseevent.GeneralMouseEventReceiverTest;
 import com.logistics.pvis.gui.guielement.GuiElement;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 
@@ -62,13 +61,6 @@ public class GuiLayerTest {
 	@Test
 	public void testGetCanvas() {
 		assertSame(canvas, layer.getCanvas());
-	}
-
-	@Test
-	public void testProcessMouseEvent() {
-		GeneralMouseEventReceiverTest test = 
-				new GeneralMouseEventReceiverTest(layer);
-		test.testProcessMouseEvent();
 	}
 
 }

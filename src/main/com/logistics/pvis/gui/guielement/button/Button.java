@@ -1,11 +1,14 @@
 package com.logistics.pvis.gui.guielement.button;
 
+import com.logistics.pvis.element.BaseElement;
+import com.logistics.pvis.event.mouseevent.MouseEvent;
+import com.logistics.pvis.event.mouseevent.MouseEventHandler;
 import com.logistics.pvis.gui.guielement.GuiElement;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.shape.Shape;
 import com.logistics.pvis.shape.text.Text;
 
-public class Button implements GuiElement {
+public class Button extends BaseElement implements GuiElement {
 
 	GuiElementDimension dimension = null;
 	Shape shape = null;

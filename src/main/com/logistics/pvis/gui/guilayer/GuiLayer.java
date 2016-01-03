@@ -1,24 +1,18 @@
 package com.logistics.pvis.gui.guilayer;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 import com.logistics.pvis.canvas.TwoDimensionCanvas;
-import com.logistics.pvis.event.mouseevent.MouseEvent;
-import com.logistics.pvis.event.mouseevent.MouseEventHandler;
+import com.logistics.pvis.element.BaseElement;
 import com.logistics.pvis.gui.guicontainer.GuiContainer;
 import com.logistics.pvis.gui.guielement.GuiElement;
 import com.logistics.pvis.gui.guielement.GuiElementDimension;
 import com.logistics.pvis.layer.TwoDimensionLayer;
 
-public class GuiLayer implements GuiContainer, TwoDimensionLayer {
+public class GuiLayer extends BaseElement implements GuiContainer, TwoDimensionLayer {
 	
 	Set<GuiElement> elements = new HashSet<GuiElement>();
-	List<MouseEventHandler> mouseEventHandlers = 
-			new ArrayList<MouseEventHandler>();
 	TwoDimensionCanvas canvas;
 	GuiElementDimension dimension;
 	
@@ -71,24 +65,6 @@ public class GuiLayer implements GuiContainer, TwoDimensionLayer {
 	@Override
 	public TwoDimensionCanvas getCanvas() {
 		return canvas;
-	}
-
-	@Override
-	public void processMouseEvent(MouseEvent event) {
-		synchronized(mouseEventHandlers) {
-			Iterator<MouseEventHandler> it = mouseEventHandlers.iterator();
-			while(it.hasNext()) {
-				MouseEventHandler handler = it.next();
-				handler.process(event);
-			}
-		}
-	}
-
-	@Override
-	public void addMouseEventHandler(MouseEventHandler eventHandler) {
-		synchronized(mouseEventHandlers) {
-			mouseEventHandlers.add(eventHandler);
-		}
 	}
 
 	/*

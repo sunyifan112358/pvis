@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.logistics.pvis.event.mouseevent.GeneralMouseEventReceiverTest;
 import com.logistics.pvis.layer.Layer;
 
 public class BaseSceneTest {
@@ -39,13 +38,4 @@ public class BaseSceneTest {
 		scene.render();
 		assertAllLayersRendered();
 	}
-
-	@Test
-	public void testProcessMouseEvent() {
-		BaseScene scene = new BaseScene();
-		GeneralMouseEventReceiverTest test = 
-				new GeneralMouseEventReceiverTest(scene);
-		test.testProcessMouseEvent();
-	}
-
 }

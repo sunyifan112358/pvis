@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.junit.After;
@@ -29,7 +30,7 @@ public class GuiLayerMouseEventPropagatorTest {
 		element1 = mock(GuiElement.class);
 		element2 = mock(GuiElement.class);
 		
-		elements = new HashSet<GuiElement>();
+		elements = new LinkedHashSet<GuiElement>();
 		elements.add(element1);
 		elements.add(element2);
 		when(layer.getGuiElements()).thenReturn(elements);
@@ -52,6 +53,7 @@ public class GuiLayerMouseEventPropagatorTest {
 		verify(element1).processMouseEvent(event);
 		verify(element2).processMouseEvent(event);
 	}
+	
 	@Test
 	public void testProcessShouldStopPropagate() {
 		when(event.isPropagating())
