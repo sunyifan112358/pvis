@@ -3,7 +3,6 @@
  */
 package com.logistics.pvis.scene;
 
-import java.util.Iterator;
 import java.util.List;
 
 import com.logistics.pvis.event.mouseevent.MouseEventReceiver;

@@ -10,6 +10,7 @@ import com.logistics.pvis.gui.guielement.button.ButtonFactory;
 import com.logistics.pvis.gui.guilayer.GuiLayer;
 import com.logistics.pvis.gui.guilayer.GuiLayerFactory;
 import com.logistics.pvis.scene.BaseScene;
+import com.logistics.pvis.scene.BaseSceneFactory;
 import com.logistics.pvis.scene.Scene;
 
 public class App implements Application {
@@ -26,7 +27,8 @@ public class App implements Application {
 
 	@Override
 	public void start() {
-		Scene scene = new BaseScene();
+		BaseSceneFactory factory = new BaseSceneFactory();
+		Scene scene = factory.produceBaseScene();
 		
 		GuiLayerFactory guiLayerFactory = new GuiLayerFactory();
 		GuiLayer layer = guiLayerFactory.produceGuiLayer(frame);
