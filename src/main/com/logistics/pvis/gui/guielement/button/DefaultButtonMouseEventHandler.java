@@ -1,5 +1,6 @@
 package com.logistics.pvis.gui.guielement.button;
 
+import com.logistics.pvis.color.Color;
 import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.event.mouseevent.MouseEvent;
 import com.logistics.pvis.event.mouseevent.MouseEventAction;
@@ -33,9 +34,19 @@ public class DefaultButtonMouseEventHandler implements MouseEventHandler {
 
 	@Override
 	public void process(MouseEvent mouseEvent) {
+		if (mouseEvent.getAction() == MouseEventAction.MOVE) {
+			if (isMouseIn(mouseEvent)) {
+				button.getShape().setFillColor(new Color(240));
+			} else {
+				button.getShape().setFillColor(new Color(255));
+			}
+		}
+		
 		if (isMouseIn(mouseEvent)) {
-			if(mouseEvent.getAction() == MouseEventAction.CLICK) {
-				System.out.println("Clicked");
+			if(mouseEvent.getAction() == MouseEventAction.PRESS) {
+				button.getShape().setFillColor(new Color(200));
+			} else if (mouseEvent.getAction() == MouseEventAction.RELEASE) {
+				button.getShape().setFillColor(new Color(255));
 			}
 		}
 	}

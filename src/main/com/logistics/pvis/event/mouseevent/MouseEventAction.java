@@ -5,5 +5,6 @@ public enum MouseEventAction {
 	RELEASE,
 	CLICK,
 	DRAG,
-	WHEEL
+	WHEEL,
+	MOVE
 }

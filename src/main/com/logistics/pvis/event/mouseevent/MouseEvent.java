@@ -30,6 +30,9 @@ public class MouseEvent implements Event {
 			
 		case processing.event.MouseEvent.WHEEL:
 			return MouseEventAction.WHEEL;
+			
+		case processing.event.MouseEvent.MOVE:
+			return MouseEventAction.MOVE;
 		
 		default:
 			throw new NotSupportedMouseAction(
@@ -37,8 +40,7 @@ public class MouseEvent implements Event {
 		}
 	}
 	
-	protected MouseButton convertMouseButton(int button) 
-			throws NotSupportedMouseButton {
+	protected MouseButton convertMouseButton(int button) {
 		switch(button) {
 		case PConstants.LEFT:
 			return MouseButton.LEFT;
@@ -50,8 +52,8 @@ public class MouseEvent implements Event {
 			return MouseButton.MIDDLE;
 			
 		default:
-			throw new NotSupportedMouseButton(
-					String.format("Mouse button: %d", button));
+			return MouseButton.NONE;
+			
 		}
 	}
 	
@@ -61,8 +63,9 @@ public class MouseEvent implements Event {
 			this.button = convertMouseButton(event.getButton());
 			this.position = new Point2D(event.getX(), event.getY());
 			this.count = event.getCount();
-		} catch (NotSupportedMouseAction | NotSupportedMouseButton e) {
+		} catch (NotSupportedMouseAction e) {
 			e.printStackTrace();
+			System.exit(1);
 		}
 	}
 	

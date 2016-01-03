@@ -107,4 +107,13 @@ public class DelegatedPApplet extends PApplet {
 		processMouseEvent(e);
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see processing.core.PApplet#mouseMoved(java.awt.event.MouseEvent)
+	 */
+	@Override
+	public void mouseMoved(processing.event.MouseEvent e) {
+		processMouseEvent(e);
+	}
+	
 }
