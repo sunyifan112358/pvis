@@ -3,6 +3,7 @@
  */
 package com.logistics.pvis.gui.guielement;
 
+import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 /**
@@ -22,4 +23,5 @@ public interface GuiElementDimension {
 	int getAbsoluteY();
 	int getWidth();
 	int getHeight();
+	Dimension getAbsoluteDimension();
 }

@@ -3,6 +3,7 @@
  */
 package com.logistics.pvis.gui.guielement;
 
+import com.logistics.pvis.dimension.Dimension;
 import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 
 /**
@@ -175,6 +176,11 @@ public class GuiElementDimensionImpl implements GuiElementDimension {
 	@Override
 	public GuiElementDimension getContainerDimension() {
 		return this.containerDimension;
+	}
+
+	@Override
+	public Dimension getAbsoluteDimension() {
+		return new Dimension(absoluteX, absoluteY, width, height);
 	}
 
 }

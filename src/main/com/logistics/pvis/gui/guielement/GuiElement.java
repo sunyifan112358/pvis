@@ -11,5 +11,5 @@ import com.logistics.pvis.renderable.Renderable;
  *
  */
 public interface GuiElement extends Element, Renderable{
-
+	public GuiElementDimension getGuiElementDimension();
 }

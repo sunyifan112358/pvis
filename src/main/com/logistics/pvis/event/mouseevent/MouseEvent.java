@@ -70,11 +70,11 @@ public class MouseEvent implements Event {
 		return count;
 	}
 	
-	public MouseButton getMouseButton() {
+	public MouseButton getButton() {
 		return this.button;
 	}
 	
-	public Point2D getMousePosition() {
+	public Point2D getPosition() {
 		return position;
 	}
 	

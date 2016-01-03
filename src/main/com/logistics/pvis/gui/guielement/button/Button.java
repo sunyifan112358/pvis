@@ -63,4 +63,10 @@ public class Button extends BaseElement implements GuiElement {
 		text.render();
 	}
 
+
+	@Override
+	public GuiElementDimension getGuiElementDimension() {
+		return this.dimension;
+	}
+
 }

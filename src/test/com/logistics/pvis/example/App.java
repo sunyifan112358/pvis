@@ -7,6 +7,7 @@ import com.logistics.pvis.frame.ProcessingFrame;
 import com.logistics.pvis.gui.anchorpoint.AnchorPoint;
 import com.logistics.pvis.gui.guielement.button.Button;
 import com.logistics.pvis.gui.guielement.button.ButtonFactory;
+import com.logistics.pvis.gui.guielement.button.DefaultButtonMouseEventHandler;
 import com.logistics.pvis.gui.guilayer.GuiLayer;
 import com.logistics.pvis.gui.guilayer.GuiLayerFactory;
 import com.logistics.pvis.scene.BaseScene;
@@ -44,7 +45,8 @@ public class App implements Application {
 		ButtonFactory buttonFactory = new ButtonFactory(layer, layer);
 		Button button = buttonFactory.produceButton("123", 
 				AnchorPoint.BottomRight, new Dimension(10, 20, 50, 20));
-		ButtonMouseEventHandler mouseHandler = new ButtonMouseEventHandler();
+		DefaultButtonMouseEventHandler mouseHandler = 
+				new DefaultButtonMouseEventHandler(button);
 		button.addMouseEventHandler(mouseHandler);
 		layer.addGuiElement(button);
 	}
